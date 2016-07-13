@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.example.young.ohgamdiary.DiaryListActivity;
 import com.example.young.ohgamdiary.DiaryWritingActivity;
 import com.example.young.ohgamdiary.R;
 import com.example.young.ohgamdiary.SplashScreenActivity;
+import com.example.young.ohgamdiary.dao.DatabaseHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +32,13 @@ public class DiaryListRecyclerAdapter extends RecyclerView.Adapter<DiaryListRecy
     private int itemLayout;
     public static int UPDATE_ITEM_POSITION;
     public static ViewItem UPDATE_ITEM = new ViewItem();
+    private DatabaseHandler databaseHandler;
 
     public DiaryListRecyclerAdapter(DiaryListActivity diaryListActivity, List<ViewItem> item, int itemLayout) {
         this.context = diaryListActivity;
         this.item = item;
         this.itemLayout = itemLayout;
+        this.databaseHandler =  DatabaseHandler.open(context);
     }
 
     @Override
@@ -80,6 +84,7 @@ public class DiaryListRecyclerAdapter extends RecyclerView.Adapter<DiaryListRecy
             holder.commaText.setVisibility(View.VISIBLE);
         }
 
+        //수정 버튼에 리스너 붙이기 START
         holder.editDiaryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +104,19 @@ public class DiaryListRecyclerAdapter extends RecyclerView.Adapter<DiaryListRecy
 
             }
         });
+        //수정 버튼에 리스너 붙이기 END
+
+
+        //삭제 버튼에 리스너 붙이기 START
+        holder.deleteDiaryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseHandler.deleteDiaryContent(item.get(position).id);//DB에서 삭제하기
+                item.remove(position);//adapter에서 쓰고 있는 DataSet을 수정해주고
+                notifyDataSetChanged();//수정되었다고 adapter에게 알려주면 됨
+            }
+        });
+        //삭제 버튼에 리스너 붙이기 END
 
         holder.diaryText.setOnClickListener(new View.OnClickListener() {    //텍스트 말고 레이아웃에 달 것(그리고 텍스트들에는 클릭을 넘겨버릴 것
             @Override
@@ -138,6 +156,8 @@ public class DiaryListRecyclerAdapter extends RecyclerView.Adapter<DiaryListRecy
         public RelativeLayout afterClickVisibleLayout;  //클릭하면 visible 할 레이아웃
         public boolean isOpenDiary = false; //클릭되었는지
         public Button editDiaryBtn;
+        public Button deleteDiaryBtn;
+        public LinearLayout oneItemlayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -148,6 +168,8 @@ public class DiaryListRecyclerAdapter extends RecyclerView.Adapter<DiaryListRecy
             tags = (TextView)itemView.findViewById(R.id.tagsText);
             afterClickVisibleLayout = (RelativeLayout)itemView.findViewById(R.id.afterClickVisibleLayout);
             editDiaryBtn = (Button)itemView.findViewById(R.id.editDiaryBtn);
+            deleteDiaryBtn = (Button) itemView.findViewById(R.id.deleteDiaryBtn);
+            oneItemlayout = (LinearLayout) itemView.findViewById(R.id.oneItemlayout);
         }
 
     }

@@ -40,6 +40,7 @@ public class DiaryListActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     int listCount = 0;
     LinearLayoutManager linearLayoutManager;
+    Button deleteBiaryBtn;
     Button editDiaryBtn;
 
     @Override
@@ -75,6 +76,7 @@ public class DiaryListActivity extends AppCompatActivity {
         Button writeDiaryBtn = (Button)findViewById(R.id.writeDiaryBtn);
         editDiaryBtn = (Button) findViewById(R.id.editDiaryBtn);
         talkingText = (TextView)findViewById(R.id.talkingText);
+        deleteBiaryBtn = (Button) findViewById(R.id.deleteDiaryBtn);
         //xml 요소들 붙이기 END
 
     //talkingText를 위한 AsyncTask 실행하기 START

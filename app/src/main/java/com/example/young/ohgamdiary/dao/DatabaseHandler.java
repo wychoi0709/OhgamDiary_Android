@@ -63,4 +63,11 @@ public class DatabaseHandler {
         Log.d("update문", "UPDATE diary SET contents = '" + diaryContent.content + "', writeDate = '" + diaryContent.year + "-" + diaryContent.month + "-" + diaryContent.date + "', writeTime = '" + diaryContent.hour+ ":" + diaryContent.minute + ":" + diaryContent.second + "', user_iduser = " + 0 + " WHERE iddiary = " + diaryContent.id + ";");
     }
     //디비에 업데이트하는 코드 END
+
+    //디비에 삭제하는 코드 START
+    public  void deleteDiaryContent(int id){
+        db.execSQL("DELETE FROM diary WHERE iddiary = " + id);
+        Log.d("delete문", "DELETE FROM diary WHERE iddiary = " + id);
+    }
+    //디비에 삭제하는 코드 END
 }
