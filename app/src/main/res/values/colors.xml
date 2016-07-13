@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="mainColor">#9999B1</color>
+    <color name="nightColor">#10121d</color>
+    <color name="white">#ffffff</color>
+    <color name="subColor">#d4d6d1</color>
+    <color name="tagBoxColor">#9999B1</color>
+</resources>

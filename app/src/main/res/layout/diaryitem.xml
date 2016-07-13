@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools= "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:layout_marginBottom="5dp">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/beforeClickVisibleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2016년 05월 15일(목)"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/diaryText"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/dateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="14"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    android:text="주저리주저리주저리 \n주저리주\n렂러댜\n리\nㅓ\nㅈ\nㄷ\n마\nㅣ\n렁\n나\nㅣ\n러\nㅏ\nㅣ\nㅇ\nㄴ\n머라ㅣㅇㄴ멂나이"/>
+                <TextView
+                    android:id="@+id/commaText"
+                    android:layout_below="@id/diaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="..."
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/afterClickVisibleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@id/beforeClickVisibleLayout"
+                android:visibility="gone">
+                <RelativeLayout
+                    android:id="@+id/tagBoxLayout"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="18dp"
+                    android:paddingTop="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/tagBoxColor">
+                    <TextView
+                        android:id="@+id/tagsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:text="#여기에태그가 들어갑니다."/>
+                </RelativeLayout>
+                <Button
+                    android:layout_below="@id/tagBoxLayout"
+                    android:id="@+id/editDiaryBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_btn_bg" />
+
+                <Button
+                    android:id="@+id/deleteDiaryBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/delete_btn_bg"
+                    android:layout_below="@id/editDiaryBtn"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

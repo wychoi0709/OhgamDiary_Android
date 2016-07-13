@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    android:padding="16dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/vidalon_paper"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_height="50dp">
+        <EditText
+            android:id="@+id/yearEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:hint="2016"
+            android:textSize="17sp"
+            android:maxLength="4"
+            android:textStyle="bold"
+            android:inputType="number"
+            android:textColor="@color/nightColor"
+            android:textColorHint="@color/nightColor" />
+        <TextView
+            android:id="@+id/yearLetter"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/yearEditText"
+            android:text="년"
+            android:layout_centerVertical="true"
+            android:textSize="17sp"
+            android:textColor="@color/nightColor"/>
+        <EditText
+            android:id="@+id/monthEditText"
+            android:layout_width="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/nightColor"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_toRightOf="@id/yearLetter"
+            android:hint="11"
+            android:textSize="17sp"
+            android:maxLength="2"
+            android:textColorHint="@color/nightColor"/>
+        <TextView
+            android:id="@+id/monthLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="월"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:textSize="17sp"
+            android:layout_toRightOf="@id/monthEditText"
+            android:textColor="@color/nightColor"/>
+        <EditText
+            android:id="@+id/dateEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textColor="@color/nightColor"
+            android:inputType="number"
+            android:gravity="center"
+            android:hint="11"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:maxLength="2"
+            android:layout_toRightOf="@id/monthLetter"
+            android:textColorHint="@color/nightColor"/>
+        <TextView
+            android:id="@+id/dateLetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/dateEditText"
+            android:textColor="@color/nightColor"/>
+
+    </RelativeLayout>
+    <EditText
+        android:id="@+id/tagEditText"
+        android:layout_alignParentBottom="true"
+        android:background="@color/mainColor"
+        android:layout_width="match_parent"
+        android:hint="여기에 태그를 입력해주세요"
+        android:textSize="16sp"
+        android:maxHeight="100dp"
+        android:gravity="center"
+        android:layout_margin="8dp"
+        android:minHeight="50dp"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/diaryEditText"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@id/dateLayout"
+        android:layout_above="@id/tagEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="터치해서 글을 적어보세요"
+        android:textColor="@color/nightColor"
+        android:textSize="16sp"
+        android:textColorHint="@color/nightColor"
+        android:gravity="top" />
+
+
+    <Button
+        android:id="@+id/confirmBtn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/confirm_btn_bg"
+        android:layout_alignParentRight="true"
+        />
+
+</RelativeLayout>

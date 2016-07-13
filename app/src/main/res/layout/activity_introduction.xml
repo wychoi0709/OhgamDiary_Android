@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools= "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:ignore="MissingPrefix">
+
+    <TextView
+        android:id="@+id/firstIntroText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/introduction1"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="23sp"
+        android:layout_centerInParent="true"
+        fontPath="fonts/misaeng.ttf"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stars_for_intro1"
+        android:layout_toLeftOf="@id/firstIntroText"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="-80dp"
+        android:layout_marginBottom="-30dp"
+        android:layout_above="@id/firstIntroText"/>
+
+    <ImageView
+        android:layout_marginLeft="50dp"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:src="@drawable/house_for_intro1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
